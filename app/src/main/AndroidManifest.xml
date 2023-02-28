@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.StaySafe">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.StaySafe.AboutUs"
+            android:exported="true"
+            android:label="AboutUs"
+            android:parentActivityName="com.example.StaySafe.MainActivity"
+            android:theme="@style/Theme.New" />
+        <activity
+            android:name="com.example.StaySafe.MagBtnInst"
+            android:exported="true"
+            android:label="Detailed Instructions"
+            android:parentActivityName="com.example.StaySafe.Magnetometer"
+            android:theme="@style/Theme.New"/>
+        <activity
+            android:name="com.example.StaySafe.SosInsructionsActivity"
+            android:exported="true"
+            android:label="SOS Instructions"
+            android:parentActivityName="com.example.StaySafe.SmsActivity"
+            android:theme="@style/Theme.New" />
+        <activity
+            android:name="com.example.StaySafe.Magnetometer"
+            android:exported="true"
+            android:label="Spy Camera Dectector"
+            android:parentActivityName="com.example.StaySafe.ChoosenActivity"
+            android:theme="@style/Theme.New" />/>
+        <activity
+            android:name="com.example.StaySafe.MagnoInst"
+            android:exported="true"
+            android:label="Manual Detection"
+            android:parentActivityName="com.example.StaySafe.ChoosenActivity"
+            android:theme="@style/Theme.New" />
+        <activity
+            android:name="com.example.StaySafe.Outside"
+            android:exported="true"
+            android:label="Outside Instructions"
+            android:parentActivityName="com.example.StaySafe.MagnoInst"
+            android:theme="@style/Theme.New"/>
+        <activity
+            android:name="com.example.StaySafe.ChangingRoom"
+            android:exported="true"
+            android:label="ChangingRoom Instructions"
+            android:parentActivityName="com.example.StaySafe.MagnoInst"
+            android:theme="@style/Theme.New"/>
+        <activity
+            android:name="com.example.StaySafe.Bedroom"
+            android:exported="true"
+            android:label="Bedroom Instructions"
+            android:parentActivityName="com.example.StaySafe.MagnoInst"
+            android:theme="@style/Theme.New"/>
+        <activity
+            android:name="com.example.StaySafe.Bathroom"
+            android:exported="true"
+            android:label="Bathroom Instructions"
+            android:parentActivityName="com.example.StaySafe.MagnoInst"
+            android:theme="@style/Theme.New"/>
+        <activity
+            android:name="com.example.StaySafe.ChoosenActivity"
+            android:exported="true"
+            android:label="Detect Hidden Cameras"
+            android:parentActivityName="com.example.StaySafe.MainActivity"
+            android:theme="@style/Theme.New" />
+        <activity
+            android:name="com.example.StaySafe.NewsActivity"
+            android:exported="true"
+            android:label="Women's News"
+            android:parentActivityName="com.example.StaySafe.MainActivity"
+            android:theme="@style/Theme.New" />
+        <activity
+            android:name="com.example.StaySafe.Instructions"
+            android:label="App Tour"
+            android:parentActivityName="com.example.StaySafe.MainActivity"
+            android:theme="@style/Theme.New" />
+        <activity android:name="com.example.StaySafe.webactivity" />
+        <activity
+            android:name="com.example.StaySafe.SmsActivity"
+            android:label="Emergency Service"
+            android:parentActivityName="com.example.StaySafe.MainActivity"
+            android:theme="@style/Theme.New" />
+        <activity android:name="com.example.StaySafe.CurrentLocation" />
+        <activity android:name="com.example.StaySafe.Flashing" />
+        <activity android:name="com.example.StaySafe.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.StaySafe.MainActivity" />
+
+        <receiver android:name="com.example.StaySafe.ScreenOnOffReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="number.action.string" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.example.StaySafe.ScreenOnOffBackgroundService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>
